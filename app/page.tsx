@@ -9,13 +9,11 @@ export default function Home() {
       <div className="overlay" />
 
       <section className="brand" aria-label="Five Diamonds Ranches">
-        <div className="stamp">
-          <img
-            className="logo"
-            src="/five-diamonds-logo.png"
-            alt="Five Diamonds Ranches — Beef, Cows, Family"
-          />
-        </div>
+        <img
+          className="logo"
+          src="/five-diamonds-logo.png"
+          alt="Five Diamonds Ranches — Beef, Cows, Family"
+        />
         <div className="domainLine">
           <span className="diamond" aria-hidden="true" />
           <p>Central</p>

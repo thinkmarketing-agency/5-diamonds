@@ -56,68 +56,27 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at center, rgba(20, 12, 7, .2), rgba(20, 12, 7, .68) 74%),
-    linear-gradient(180deg, rgba(18, 11, 7, .32), rgba(18, 11, 7, .58));
+    radial-gradient(circle at center, rgba(20, 12, 7, .34), rgba(20, 12, 7, .68) 72%),
+    linear-gradient(180deg, rgba(18, 11, 7, .24), rgba(18, 11, 7, .54));
 }
 
 .brand {
   position: relative;
   z-index: 1;
-  width: min(540px, 88vw);
+  width: min(520px, 88vw);
   text-align: center;
   animation: arrive .9s ease-out both;
-}
-
-.stamp {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 1;
-  padding: 12px;
-  background:
-    linear-gradient(135deg, rgba(238, 221, 190, .72), rgba(179, 139, 88, .45)),
-    radial-gradient(circle at 52% 45%, rgba(255, 244, 222, .55), rgba(96, 58, 31, .2) 72%);
-  border: 2px solid rgba(238, 221, 190, .76);
-  box-shadow:
-    0 34px 92px rgba(0, 0, 0, .62),
-    inset 0 0 0 6px rgba(55, 33, 18, .28),
-    inset 0 0 0 9px rgba(238, 221, 190, .35);
-  transform: rotate(-1.1deg);
-}
-
-.stamp::before,
-.stamp::after {
-  position: absolute;
-  inset: 12px;
-  z-index: 1;
-  pointer-events: none;
-  content: "";
-}
-
-.stamp::before {
-  border: 2px solid rgba(55, 33, 18, .56);
-  box-shadow: inset 0 0 0 1px rgba(238, 221, 190, .35);
-  mix-blend-mode: multiply;
-}
-
-.stamp::after {
-  opacity: .42;
-  background-image:
-    radial-gradient(circle at 24% 18%, transparent 0 1px, rgba(255, 250, 238, .55) 1px 2px, transparent 2px),
-    radial-gradient(circle at 68% 72%, transparent 0 1px, rgba(55, 33, 18, .35) 1px 2px, transparent 2px),
-    linear-gradient(110deg, transparent 0 44%, rgba(255, 250, 238, .34) 46%, transparent 49% 100%);
-  background-size: 17px 19px, 23px 21px, 100% 100%;
-  mix-blend-mode: overlay;
 }
 
 .logo {
   display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
-  opacity: .86;
-  filter: sepia(.28) saturate(.72) contrast(1.34) brightness(.9);
-  mix-blend-mode: multiply;
+  opacity: .76;
+  filter: sepia(.16) saturate(.74) contrast(1.18) brightness(1.02);
+  mix-blend-mode: screen;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, .35);
 }
 
 .domainLine {
@@ -183,9 +142,6 @@ footer {
   .landing { padding-bottom: 100px; }
   .ranchBackground { object-position: 61% center; }
   .brand { width: min(390px, 86vw); }
-  .stamp { padding: 8px; }
-  .stamp::before,
-  .stamp::after { inset: 8px; }
   .domainLine { gap: 8px; }
   .domainLine p { font-size: .72rem; letter-spacing: .08em; }
   .diamond { width: 7px; height: 7px; }

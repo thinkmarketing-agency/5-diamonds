@@ -9,6 +9,7 @@ export default function Home() {
       <div className="overlay" />
 
       <section className="brand" aria-label="Five Diamonds Ranches">
+        <h1 className="srOnly">Five Diamonds Ranches Central Oregon Beef</h1>
         <img
           className="logo"
           src="/five-diamonds-logo-transparent.png"

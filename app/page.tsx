@@ -1,22 +1,35 @@
 export default function Home() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Five Diamonds Ranches",
-    url: "https://fivediamondsranches.com",
-    image: "https://fivediamondsranches.com/central-oregon-ranch.png",
-    description:
-      "Five Diamonds Ranches is preparing a Central Oregon beef offering rooted in ranch-raised cattle, family stewardship, and local land.",
-    areaServed: {
-      "@type": "Place",
-      name: "Central Oregon",
-    },
-    brand: {
-      "@type": "Brand",
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
       name: "Five Diamonds Ranches",
+      url: "https://fivediamondsranches.com",
+      image: "https://fivediamondsranches.com/central-oregon-ranch.png",
+      description:
+        "Five Diamonds Ranches is preparing a Central Oregon beef offering rooted in ranch-raised cattle, family stewardship, and local land.",
+      areaServed: {
+        "@type": "Place",
+        name: "Central Oregon",
+      },
+      brand: {
+        "@type": "Brand",
+        name: "Five Diamonds Ranches",
+      },
+      sameAs: ["https://centraloregonbeef.com"],
     },
-    sameAs: ["https://centraloregonbeef.com"],
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Five Diamonds Ranches",
+      url: "https://fivediamondsranches.com",
+      creator: {
+        "@type": "Organization",
+        name: "Think Marketing",
+        url: "https://thinkmarketingbend.com",
+      },
+    },
+  ];
 
   return (
     <main>
@@ -89,6 +102,22 @@ export default function Home() {
               </p>
             </article>
           </div>
+          <a
+            className="builderMark"
+            href="https://thinkmarketingbend.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Built by Think Marketing"
+          >
+            <span className="builderLogo" aria-hidden="true">
+              <strong>think</strong>
+              <em>marketing</em>
+            </span>
+            <span>
+              <small>Strategy, web, and search</small>
+              Built by Think Marketing
+            </span>
+          </a>
         </div>
       </section>
     </main>

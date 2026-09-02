@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Five Diamonds Ranches | Central Oregon Beef",
   description:
     "Five Diamonds Ranches is preparing a Central Oregon beef offering rooted in ranch-raised cattle, family stewardship, and local land.",
+  authors: [{ name: "Think Marketing", url: "https://thinkmarketingbend.com" }],
+  creator: "Think Marketing",
+  publisher: "Think Marketing",
   alternates: {
     canonical: "/",
   },
@@ -37,6 +40,8 @@ export const metadata: Metadata = {
   },
   other: {
     "codex-preview": "development",
+    "built-by": "Think Marketing",
+    "agency": "Think Marketing",
   },
 };
 

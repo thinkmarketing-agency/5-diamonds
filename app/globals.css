@@ -212,6 +212,63 @@ footer {
   line-height: 1.65;
 }
 
+.builderMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 46px;
+  color: rgba(240, 223, 196, .78);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .74rem;
+  font-weight: 700;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.builderMark:hover {
+  color: #f0dfc4;
+  transform: translateY(-1px);
+}
+
+.builderLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70px;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 1px solid rgba(240, 223, 196, .42);
+  color: #f0dfc4;
+  text-align: left;
+  line-height: 1;
+}
+
+.builderLogo strong,
+.builderLogo em {
+  display: block;
+  font-style: normal;
+  letter-spacing: .02em;
+}
+
+.builderLogo strong {
+  font-size: .82rem;
+}
+
+.builderLogo em {
+  margin-top: 2px;
+  color: rgba(240, 223, 196, .58);
+  font-size: .5rem;
+}
+
+.builderMark small {
+  display: block;
+  margin-bottom: 3px;
+  color: rgba(240, 223, 196, .48);
+  font-size: .58rem;
+  letter-spacing: .2em;
+}
+
 @keyframes arrive {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
@@ -228,6 +285,7 @@ footer {
   .seoPanel { padding: 54px 20px 64px; }
   .seoGrid { grid-template-columns: 1fr; }
   .seoGrid article { min-height: auto; padding: 24px; }
+  .builderMark { margin-top: 34px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

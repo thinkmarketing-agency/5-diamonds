@@ -16,7 +16,11 @@ export default function Home() {
         />
         <div className="domainLine">
           <span className="diamond" aria-hidden="true" />
-          <p>Central Oregon Beef</p>
+          <p>Central</p>
+          <span className="diamond" aria-hidden="true" />
+          <p>Oregon</p>
+          <span className="diamond" aria-hidden="true" />
+          <p>Beef</p>
           <span className="diamond" aria-hidden="true" />
         </div>
         <p className="comingSoon">Coming soon</p>

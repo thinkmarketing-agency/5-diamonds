@@ -1,0 +1,148 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+@utility scrollbar-gutter-stable {
+  scrollbar-gutter: stable;
+}
+
+:root {
+  --cream: #eadcc3;
+  --ink: #26190f;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  background: #17100b;
+  color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.landing {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 44px 24px 90px;
+}
+
+.ranchBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(20, 12, 7, .08), rgba(20, 12, 7, .56) 76%),
+    linear-gradient(180deg, rgba(18, 11, 7, .22), rgba(18, 11, 7, .45));
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  width: min(510px, 88vw);
+  text-align: center;
+  animation: arrive .9s ease-out both;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid rgba(234, 220, 195, .65);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .42);
+}
+
+.domainLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.domainLine p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(.95rem, 2vw, 1.35rem);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .55);
+}
+
+.diamond {
+  width: 9px;
+  height: 9px;
+  background: currentColor;
+  transform: rotate(45deg);
+  flex: none;
+}
+
+.comingSoon {
+  margin: 15px 0 0;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: rgba(234, 220, 195, .75);
+}
+
+footer {
+  position: absolute;
+  z-index: 1;
+  left: 38px;
+  right: 38px;
+  bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 17px;
+  border-top: 1px solid rgba(234, 220, 195, .35);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .19em;
+  color: rgba(234, 220, 195, .72);
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .landing { padding-bottom: 100px; }
+  .ranchBackground { object-position: 61% center; }
+  .brand { width: min(390px, 86vw); }
+  .domainLine { gap: 8px; }
+  .domainLine p { font-size: .72rem; letter-spacing: .08em; }
+  .diamond { width: 7px; height: 7px; }
+  footer { left: 20px; right: 20px; bottom: 20px; gap: 16px; font-size: .58rem; letter-spacing: .12em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand { animation: none; }
+}

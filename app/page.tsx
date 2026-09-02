@@ -11,7 +11,7 @@ export default function Home() {
       <section className="brand" aria-label="Five Diamonds Ranches">
         <img
           className="logo"
-          src="/five-diamonds-logo.png"
+          src="/five-diamonds-logo-transparent.png"
           alt="Five Diamonds Ranches — Beef, Cows, Family"
         />
         <div className="domainLine">

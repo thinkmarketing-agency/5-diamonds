@@ -45,6 +45,18 @@ export default function Home() {
         />
         <div className="overlay" />
 
+        <header className="siteHeader" aria-label="Five Diamonds Ranches">
+          <a className="headerBrand" href="/" aria-label="Five Diamonds Ranches home">
+            <img
+              src="/five-diamonds-logo-transparent.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <span>Five Diamonds Ranches</span>
+          </a>
+          <span className="headerLocation">Central <span className="wordDiamond" aria-hidden="true" /> Oregon <span className="wordDiamond" aria-hidden="true" /> Beef</span>
+        </header>
+
         <div className="brand" aria-label="Five Diamonds Ranches">
           <h1 className="srOnly">Five Diamonds Ranches Central Oregon Beef</h1>
           <img
@@ -52,73 +64,20 @@ export default function Home() {
             src="/five-diamonds-logo-transparent.png"
             alt="Five Diamonds Ranches — Beef, Cows, Family"
           />
-          <div className="domainLine">
-            <span className="diamond" aria-hidden="true" />
-            <p>Central</p>
-            <span className="diamond" aria-hidden="true" />
-            <p>Oregon</p>
-            <span className="diamond" aria-hidden="true" />
-            <p>Beef</p>
-            <span className="diamond" aria-hidden="true" />
-          </div>
+          <p className="domainLine">Central <span className="wordDiamond" aria-hidden="true" /> Oregon <span className="wordDiamond" aria-hidden="true" /> Beef</p>
           <p className="comingSoon">Coming soon</p>
         </div>
 
-        <footer>
-          <span>Five Diamonds Ranches</span>
-          <span>Central Oregon</span>
-        </footer>
-      </section>
+        <a
+          className="thinkMark"
+          href="https://thinkmarketingbend.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Built by Think Marketing"
+        >
+          <img src="/think-marketing-logo-transparent.png" alt="" aria-hidden="true" />
+        </a>
 
-      <section className="seoPanel" aria-labelledby="ranch-story">
-        <div className="seoInner">
-          <p className="eyebrow">Ranch-raised beef in Central Oregon</p>
-          <h2 id="ranch-story">Five Diamonds Ranches is preparing a local beef offering.</h2>
-          <p>
-            Five Diamonds Ranches is building a home for Central Oregon beef:
-            ranch-raised cattle, family stewardship, and a direct connection to
-            the land behind every cut.
-          </p>
-          <div className="seoGrid">
-            <article>
-              <h3>Local Beef</h3>
-              <p>
-                A Central Oregon beef brand focused on ranch-raised quality,
-                clear sourcing, and a straightforward way to learn when orders open.
-              </p>
-            </article>
-            <article>
-              <h3>Family Ranch</h3>
-              <p>
-                Five Diamonds Ranches centers the essentials: beef, cows, family,
-                open country, and practical care for the herd.
-              </p>
-            </article>
-            <article>
-              <h3>Coming Soon</h3>
-              <p>
-                This page is the official preview for Five Diamonds Ranches and
-                CentralOregonBeef.com while the full ranch site is prepared.
-              </p>
-            </article>
-          </div>
-          <a
-            className="builderMark"
-            href="https://thinkmarketingbend.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Built by Think Marketing"
-          >
-            <span className="builderLogo" aria-hidden="true">
-              <strong>think</strong>
-              <em>marketing</em>
-            </span>
-            <span>
-              <small>Strategy, web, and search</small>
-              Built by Think Marketing
-            </span>
-          </a>
-        </div>
       </section>
     </main>
   );

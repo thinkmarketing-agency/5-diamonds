@@ -1380,6 +1380,6 @@ select {
 @media (max-width: 640px) { .assortmentGrid { grid-template-columns: 1fr; } }
 
 .cowShare { width: 100%; max-width: 390px; height: auto; margin: 28px auto 22px; color: var(--gold); overflow: visible; }
-.cowFill { transition: y .4s ease, height .4s ease; }
+.cowFill { transition: x .4s ease, width .4s ease; }
 #assortment { scroll-margin-top: 30px; }
 @media (prefers-reduced-motion: reduce) { .cowFill { transition: none; } }

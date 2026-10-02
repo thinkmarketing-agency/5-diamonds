@@ -33,4 +33,4 @@ WRANGLER_LOG_PATH=.wrangler/wrangler.log npx wrangler types worker-runtime.d.ts 
 
 ## Client pricing update
 
-Confirmed packaged-pound rates: quarter $15, half $13, whole $10. Client sheet estimates quarter at 115 lb and whole at 460 lb (400–500 lb range). Half weight is withheld pending clarification of the sheet’s 260 lb figure. Processing fees are not yet confirmed. Whole-beef assortment is transcribed in `wholeBeefAssortment`; do not divide its counts to promise smaller-share allocations.
+Confirmed packaged-pound rates: quarter $15, half $13, whole $10. Client sheet estimates quarter at 115 lb and whole at 460 lb (400–500 lb range). Half uses the client sheet’s approximate 260 lb, giving an estimated $3,380 at $13/lb. Processing fees are not yet confirmed. Whole-beef assortment is transcribed in `wholeBeefAssortment`; do not divide its counts to promise smaller-share allocations.

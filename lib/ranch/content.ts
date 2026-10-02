@@ -44,7 +44,7 @@ export const packages: {
     share: 50,
     description: "Make beef part of the routine.",
     household: "For regular family meals and room to stock up.",
-    pounds: null,
+    pounds: 260,
     pricePerPound: 13,
     freezer: null,
   },

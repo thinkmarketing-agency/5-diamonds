@@ -74,10 +74,10 @@ export function PackageCards() {
 export function Standard({ full = false }: { full?: boolean }) {
   return (
     <div className={`principles ${full ? "full" : ""}`}>
-      {principles.map((p, i) => (
+      {principles.map((p) => (
         <article key={p.title}>
           <span className="principleNumber" aria-hidden="true">
-            <Diamond /><b>{i + 1}</b>
+            <Diamond />
           </span>
           <h3>{p.title}</h3>
           <p>{full ? p.copy : p.short}</p>

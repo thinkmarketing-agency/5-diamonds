@@ -1,7 +1,7 @@
 import { type PackageId } from "./content";
 
 export const cowLabels: Record<PackageId, string> = {
-  quarter: "Quarter Cow", half: "Half Cow", whole: "Full Cow",
+  quarter: "1/4 Cow", half: "1/2 Cow", whole: "Full Cow",
 };
 const groups = [
   { name: "Steaks", pounds: [90, 110], cuts: [[16, 24, "ribeyes"], [16, 24, "New York strips"], [8, 12, "T-bones"], [4, 8, "sirloins"], [2, 2, "flank steaks"], [2, 2, "skirt steaks"]] },

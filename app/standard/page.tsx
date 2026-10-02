@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 export default function StandardPage() {
   return (
-    <main id="main">
+    <main id="main" className="standardPage">
       <Intro
         eyebrow="Five diamonds. One commitment."
         title="The 5 Diamonds Standard."
@@ -22,13 +22,8 @@ export default function StandardPage() {
         <Diamonds />
         <p>ROOM TO ROAM. A REASON TO TRUST.</p>
       </div>
-      <section className="wrap section">
+      <section className="wrap section standardPrinciples">
         <Standard full />
-        <p className="notice">
-          More ranch details are on the way. Animal care practices, feeding and
-          finishing choices, and processing information will be shared after
-          ranch verification.
-        </p>
       </section>
       <Callout />
     </main>

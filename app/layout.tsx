@@ -15,18 +15,25 @@ export const metadata: Metadata = {
     siteName: "5 Diamonds Ranches",
     images: [
       {
-        url: "/central-oregon-ranch.png",
-        width: 1774,
-        height: 887,
-        alt: "Cattle in open Oregon pasture",
+        url: "/5-diamonds-share.png",
+        width: 1536,
+        height: 1024,
+        alt: "5 Diamonds Ranches — Beef, Hay, Family",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/central-oregon-ranch.png"],
+    images: ["/5-diamonds-share.png"],
   },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg?v=diamond-brown", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon-32.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   other: { "codex-preview": "development", "built-by": "Think Marketing" },
 };
 export default function RootLayout({

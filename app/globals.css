@@ -1383,3 +1383,48 @@ select {
 .cowFill { transition: x .4s ease, width .4s ease; }
 #assortment { scroll-margin-top: 30px; }
 @media (prefers-reduced-motion: reduce) { .cowFill { transition: none; } }
+
+.homeCowBody { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-top: 0; }
+.homeCowBody .cowShare { max-width: 340px; margin-block: 0; }
+.homeCowDetails { padding: 36px; align-self: center; }
+.homeCowDetails .stats { grid-template-columns: 1fr; margin-top: 0; gap: 18px; }
+@media (max-width: 640px) {
+  .homeCowBody { grid-template-columns: 1fr; }
+  .homeCowBody .cowShare { max-width: 280px; }
+  .homeCowDetails { padding: 28px; }
+  .homeCowDetails .stats dd { text-align: center; }
+}
+
+.homeBuySection { padding-top: 50px; }
+@media (max-width: 640px) {
+  .homeBuySection { padding-top: 32.5px; }
+}
+
+/* Tighter spacing around the Standard page principles. */
+.standardPage .standardPrinciples { padding-block: 20px 0; }
+.standardPage .full.principles { border-bottom: 1px solid var(--line); }
+.standardPage > .callout { padding-top: 38px; }
+@media (max-width: 640px) {
+  .standardPage .standardPrinciples { padding-top: 13px; }
+  .standardPage > .callout { padding-top: 26px; }
+}
+
+/* One continuous pricing panel: cow, price, then estimated assortment. */
+.stackedSelector { grid-template-columns: 1fr; }
+.stackedSelector > .shareVisual { padding: 28px 32px; }
+.stackedSelector .cowShare { max-width: 460px; margin: 0 auto 12px; }
+.stackedSelector .stats { grid-template-columns: repeat(3, 1fr); }
+.stackedSelector .shareAssortment { padding-top: 28px; }
+.stackedSelector .shareAssortment .sectionHeading { margin-bottom: 24px; }
+.beefSelector:has(.stackedSelector) { margin-bottom: 50px; }
+@media (max-width: 640px) {
+  .stackedSelector > .shareVisual { padding: 24px; }
+  .stackedSelector .stats { grid-template-columns: 1fr; }
+  .stackedSelector .actions { align-items: stretch; }
+  .stackedSelector .shareAssortment .sectionHeading > p { margin-top: 16px; }
+}
+
+.stackedSelector > .shareVisual { padding-bottom: 8px; }
+.stackedSelector .cowShare { margin-bottom: 0; }
+
+.stackedSelector > .shareVisual { padding-top: 8px; }

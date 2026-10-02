@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
-  PackageCards,
   Standard,
   PricingNote,
   Diamonds,
   Callout,
 } from "@/components/ranch/shared";
+import { HomeCowSelector } from "@/components/ranch/home-cow-selector";
 import { brand } from "@/lib/ranch/content";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
             <em>Raised Free. Sold Fair.</em>
           </h1>
           <p className="heroDescription">
-            Open Pasture raised in Oregon. Connected to your table.
+            Open Pasture raised. Connected to your table.
             <br />A better way to buy local beef.
           </p>
           <div className="actions">
@@ -53,22 +53,11 @@ export default function Home() {
           </span>
         </div>
       </section>
-      <section className="section wrap">
+      <section className="section wrap homeBuySection" aria-labelledby="buy-heading">
         <div className="sectionHeading">
-          <div>
-            <p className="eyebrow">Good beef. Your kind of everyday.</p>
-            <h2>
-              A share of the ranch.
-              <br />A freezer full of possibility.
-            </h2>
-          </div>
-          <p>
-            Three ways to bring Oregon beef home.
-            <br />
-            Priced by packaged weight: quarter $15/lb, half $13/lb, whole $10/lb.
-          </p>
+          <h2 id="buy-heading">Three Ways to Buy</h2>
         </div>
-        <PackageCards />
+        <HomeCowSelector />
       </section>
       <div className="wrap">
         <PricingNote />

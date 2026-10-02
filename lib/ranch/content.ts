@@ -64,27 +64,27 @@ export const principles = [
   {
     title: "Room to roam",
     short: "Pasture comes first.",
-    copy: "Open Oregon pasture is at the heart of the ranch story. We’re preparing a closer look at the land and how the cattle use it.",
+    copy: "Open pasture is the cornerstone of 5 Diamonds Ranches. We raise our cattle across 7,000 Oregon acres, with room to roam and graze.",
   },
   {
     title: "Know your beef",
     short: "A connection to its source.",
-    copy: "Buying direct creates room for real questions about the cattle, their care and the beef that reaches your freezer.",
+    copy: "Every cow is DNA tested and raised without antibiotics, and our beef is USDA inspected. It’s part of our commitment to bringing the finest beef to your table.",
   },
   {
     title: "Raised right",
     short: "Care in the everyday work.",
-    copy: "Good animal husbandry is a daily commitment. Details of our care practices will be shared here after ranch review.",
+    copy: "Good animal husbandry is a daily commitment. Our cattle are never confined or raised in feedlots. They live on open pasture, with attentive care at every stage.",
   },
   {
     title: "Beef your way",
     short: "An offering you understand.",
-    copy: "Choose a quarter, half or whole. Feeding and finishing options are being confirmed so you can make an informed choice.",
+    copy: "Choose a quarter, half or full cow, explore finishing options, and make your order your own. Custom cuts are available to suit your preferred thickness and portion size.",
   },
   {
     title: "Fair by the pound",
     short: "The weight that comes home.",
-    copy: "Our pricing is based on finished, packaged beef: $15 per pound for a quarter, $13 for a half and $10 for a whole.",
+    copy: "Our pricing is based on finished, packaged beef rather than hanging weight, so you pay only for the beef you receive.",
   },
 ];
 export const ranchClaims = [

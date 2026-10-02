@@ -1428,3 +1428,7 @@ select {
 .stackedSelector .cowShare { margin-bottom: 0; }
 
 .stackedSelector > .shareVisual { padding-top: 8px; }
+
+@media (max-width: 640px) {
+  .heroTaglinePhrase { display: block; white-space: nowrap; }
+}

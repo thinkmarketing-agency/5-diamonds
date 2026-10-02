@@ -30,7 +30,7 @@ export default function Home() {
           <h1>
             Oregon Beef.
             <br />
-            <em>Raised Free. Sold Fair.</em>
+            <em><span className="heroTaglinePhrase">Raised Free.</span>{" "}<span className="heroTaglinePhrase">Sold Fair.</span></em>
           </h1>
           <p className="heroDescription">
             Open Pasture raised. Connected to your table.

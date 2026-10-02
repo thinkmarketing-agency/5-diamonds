@@ -28,9 +28,9 @@ export default function Home() {
           <div className="heroDiamonds"><Diamonds /></div>
           <p className="eyebrow">5 Diamonds Ranches · Oregon</p>
           <h1>
-            Oregon beef.
+            Oregon Beef.
             <br />
-            <em>Raised different.</em>
+            <em>Raised Free. Sold Fair.</em>
           </h1>
           <p className="heroDescription">
             Rooted in Oregon pasture. Connected to your table.

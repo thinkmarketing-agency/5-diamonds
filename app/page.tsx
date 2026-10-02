@@ -33,8 +33,8 @@ export default function Home() {
             <em>Raised Free. Sold Fair.</em>
           </h1>
           <p className="heroDescription">
-            Rooted in Oregon pasture. Connected to your table.
-            <br />A clearer way to buy a quarter, half or whole beef.
+            Open Pasture raised in Oregon. Connected to your table.
+            <br />A better way to buy local beef.
           </p>
           <div className="actions">
             <Link href="/beef-pricing" className="button">

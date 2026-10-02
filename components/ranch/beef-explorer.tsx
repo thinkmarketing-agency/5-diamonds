@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Beef, CookingPot, Flame, Utensils, Snowflake } from "lucide-react";
-import { packages, cuts, type PackageId } from "@/lib/ranch/content";
+import { packages, cuts, wholeBeefAssortment, type PackageId } from "@/lib/ranch/content";
 import { recommendPackage, type FreezerSize } from "@/lib/ranch/recommendation";
 const categories = ["Steaks", "Roasts", "Ground beef", "Other cuts"];
 const categoryIcons = [Beef, CookingPot, Utensils, Flame];
@@ -75,7 +75,7 @@ function Explorer() {
             <dl className="stats">
               <div>
                 <dt>Take-home packaged weight</dt>
-                <dd>{pkg.pounds ? `${pkg.pounds} lb` : "Coming soon"}</dd>
+                <dd>{pkg.pounds ? `Approx. ${pkg.pounds} lb` : "Coming soon"}</dd>
               </div>
               <div>
                 <dt>Price per packaged pound</dt>
@@ -99,8 +99,8 @@ function Explorer() {
               </div>
             </dl>
             <p className="smallCopy">
-              Cut mix, quantities, pricing and availability will be confirmed
-              before reservations open.
+              Estimates use approximate packaged weights. Final weight, cut mix,
+              processing charges, any other fees and availability will be confirmed before ordering.
             </p>
             <div className="actions">
               <Link className="button" href={`/contact?interest=${pkg.id}`}>
@@ -112,6 +112,25 @@ function Explorer() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="section wrap wholeAssortment" aria-labelledby="whole-assortment-title">
+        <div className="sectionHeading">
+          <div>
+            <p className="eyebrow">The ranch’s estimated assortment</p>
+            <h2 id="whole-assortment-title">Inside a whole beef.</h2>
+          </div>
+          <p>Approximately 400–500 lb of packaged beef. Use 460 lb as a planning estimate.</p>
+        </div>
+        <div className="assortmentGrid">
+          {wholeBeefAssortment.map((group) => (
+            <article key={group.name}>
+              <p className="eyebrow">{group.weight}</p>
+              <h3>{group.name}</h3>
+              <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+            </article>
+          ))}
+        </div>
+        <p className="smallCopy">These are whole-beef estimates, not guaranteed counts. Category ranges vary together with the animal and cutting choices. Quarter and half assortments will be confirmed separately.</p>
       </section>
       <section id="cuts" className="section wrap cutGuide">
         <div className="sectionHeading">

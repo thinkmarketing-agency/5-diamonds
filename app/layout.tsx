@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | 5 Diamonds Ranches",
   },
   description:
-    "Explore quarter, half and whole Oregon ranch beef from 5 Diamonds Ranches. A clearer way to buy beef, with planned pricing based on packaged take-home weight.",
+    "Explore quarter, half and whole Oregon ranch beef from 5 Diamonds Ranches. A clearer way to buy beef, with pricing based on packaged take-home weight.",
   authors: [{ name: "Think Marketing", url: "https://thinkmarketingbend.com" }],
   openGraph: {
     type: "website",

@@ -1370,3 +1370,11 @@ select {
     justify-self: center;
   }
 }
+
+.wholeAssortment { padding-bottom: 0; }
+.assortmentGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+.assortmentGrid article { padding: 28px; background: var(--surface); border: 1px solid var(--line); }
+.assortmentGrid ul { list-style: none; padding: 0; margin: 20px 0 0; color: var(--muted); }
+.assortmentGrid li + li { margin-top: 6px; }
+@media (max-width: 950px) { .assortmentGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .assortmentGrid { grid-template-columns: 1fr; } }

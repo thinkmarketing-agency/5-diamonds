@@ -15,7 +15,7 @@ export default function BeefPricing() {
         title="Pay for the beef you take home."
       >
         <p>
-          Our planned pricing is based on finished, packaged beef — the cuts
+          Our pricing is based on finished, packaged beef — the cuts
           that fill your freezer. Explore your share below.
         </p>
       </Intro>
@@ -35,11 +35,12 @@ export default function BeefPricing() {
             </p>
           </article>
           <article>
-            <span className="eyebrow">Our planned pricing basis</span>
+            <span className="eyebrow">Our pricing basis</span>
             <h3>Packaged weight</h3>
             <p>
-              The finished cuts packed for your freezer. Final prices, package
-              estimates and any fees will be clearly stated before ordering.
+              The finished cuts packed for your freezer. Quarter beef is $15/lb,
+              half beef is $13/lb and whole beef is $10/lb. Final weight,
+              processing charges and any other fees will be confirmed before ordering.
             </p>
           </article>
         </div>

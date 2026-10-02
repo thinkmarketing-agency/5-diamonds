@@ -33,8 +33,8 @@ export const packages: {
     share: 25,
     description: "A good place to begin.",
     household: "For smaller households or a first freezer order.",
-    pounds: null,
-    pricePerPound: null,
+    pounds: 115,
+    pricePerPound: 15,
     freezer: null,
   },
   {
@@ -45,7 +45,7 @@ export const packages: {
     description: "Make beef part of the routine.",
     household: "For regular family meals and room to stock up.",
     pounds: null,
-    pricePerPound: null,
+    pricePerPound: 13,
     freezer: null,
   },
   {
@@ -55,8 +55,8 @@ export const packages: {
     share: 100,
     description: "Think ahead. Fill the freezer.",
     household: "For frequent beef eaters, larger households or sharing.",
-    pounds: null,
-    pricePerPound: null,
+    pounds: 460,
+    pricePerPound: 10,
     freezer: null,
   },
 ];
@@ -84,7 +84,7 @@ export const principles = [
   {
     title: "Fair by the pound",
     short: "The weight that comes home.",
-    copy: "Our planned pricing is based on finished, packaged beef. Final rates and package estimates will be shared before reservations open.",
+    copy: "Our pricing is based on finished, packaged beef: $15 per pound for a quarter, $13 for a half and $10 for a whole.",
   },
 ];
 export const ranchClaims = [
@@ -150,17 +150,17 @@ export const faqs = [
   {
     question: "What does packaged-weight pricing mean?",
     answer:
-      "It means pricing based on the finished, packaged beef you receive. Hanging weight is measured earlier, before the carcass is trimmed and cut. Those are different weights. Our final packaged-pound rates and any fees will be confirmed before ordering.",
+      "It means pricing based on the finished, packaged beef you receive. Hanging weight is measured earlier, before the carcass is trimmed and cut. Those are different weights. Our rates are $15 per packaged pound for a quarter, $13 for a half and $10 for a whole. Processing charges and any other fees will be confirmed before ordering.",
   },
   {
     question: "Can I order beef today?",
     answer:
-      "Reservations are not open yet. Package weights, prices, deposits and fulfillment details are still being finalized.",
+      "Reservations are not open yet. Final package weights, deposits and fulfillment details will be confirmed before ordering.",
   },
   {
     question: "Which cuts will I receive?",
     answer:
-      "The cut guide shows examples and meal ideas. Your confirmed assortment, quantities and any customization will be provided before ordering.",
+      "Our whole-beef estimate includes steaks, roasts, ground beef, specialty cuts and extras. Counts and weights vary; the final assortment and smaller-share allocations will be confirmed before ordering.",
   },
   {
     question: "How much freezer space will I need?",
@@ -261,4 +261,13 @@ export const cuts = [
     preparation:
       "Brown in batches, then simmer gently with stock and vegetables.",
   },
+];
+
+/** Client-supplied whole-beef estimates; category ranges are not additive guarantees. */
+export const wholeBeefAssortment = [
+  { name: "Steaks", weight: "90–110 lb", items: ["16–24 ribeyes", "16–24 New York strips", "8–12 T-bones", "4–8 sirloins", "2 flanks", "2 skirts"] },
+  { name: "Roasts", weight: "70–100 lb", items: ["6–10 chuck roasts", "2–4 rump roasts", "2–4 arm roasts", "2 sirloin tip roasts", "2 eye of round roasts"] },
+  { name: "Ground beef", weight: "160–240 lb", items: ["Packaged ground beef"] },
+  { name: "Specialty cuts", weight: "50–70 lb", items: ["2 whole briskets", "Short ribs", "Oxtail"] },
+  { name: "Extras", weight: "Weight varies", items: ["Soup bones", "Tallow", "Heart", "Liver", "Tongue", "Kidneys"] },
 ];

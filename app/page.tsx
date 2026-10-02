@@ -65,7 +65,7 @@ export default function Home() {
           <p>
             Three ways to bring Oregon beef home.
             <br />
-            Package details and pricing are coming soon.
+            Priced by packaged weight: quarter $15/lb, half $13/lb, whole $10/lb.
           </p>
         </div>
         <PackageCards />

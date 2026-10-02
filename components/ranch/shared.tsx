@@ -40,7 +40,7 @@ export function PackageCards() {
           <dl>
             <div>
               <dt>Packaged pounds</dt>
-              <dd>{p.pounds ? `${p.pounds} lb` : "Coming soon"}</dd>
+              <dd>{p.pounds ? `Approx. ${p.pounds} lb` : "Coming soon"}</dd>
             </div>
             <div>
               <dt>Price / packaged lb</dt>
@@ -103,7 +103,7 @@ export function PricingNote() {
           weight is the finished beef that goes into your freezer.
         </p>
         <p>
-          Our planned pricing uses packaged pounds, so the weight on your order
+          Our pricing uses packaged pounds, so the weight on your order
           is the weight you bring home.
         </p>
         <Link className="textLink" href="/beef-pricing">

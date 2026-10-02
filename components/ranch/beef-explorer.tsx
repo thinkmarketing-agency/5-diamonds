@@ -2,21 +2,32 @@
 import { useState, useId, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import { Beef, CookingPot, Flame, Utensils, Snowflake } from "lucide-react";
-import { packages, cuts, wholeBeefAssortment, type PackageId } from "@/lib/ranch/content";
+import { Snowflake } from "lucide-react";
+import { packages, type PackageId } from "@/lib/ranch/content";
 import { recommendPackage, type FreezerSize } from "@/lib/ranch/recommendation";
-const categories = ["Steaks", "Roasts", "Ground beef", "Other cuts"];
-const categoryIcons = [Beef, CookingPot, Utensils, Flame];
+import { cowLabels, cowAssortment } from "@/lib/ranch/cow-shares";
+
+function CowShare({ share }: { share: number }) {
+  const clip = useId();
+  const outline = "M65 85 C95 65 135 70 165 76 L260 75 Q282 75 296 63 L316 42 L332 47 L341 39 L338 58 L355 69 L379 91 Q391 104 380 116 L352 121 L331 110 L318 130 L305 156 L301 212 L283 212 L278 166 L270 154 Q233 174 188 165 L172 212 L153 212 L160 164 L145 152 L125 168 L116 212 L98 212 L100 161 L83 142 L79 208 L61 208 L63 128 Q52 110 65 85 Z";
+  return (
+    <svg className="cowShare" viewBox="25 25 390 205" role="img" aria-label={`Cow outline filled to ${share}%`}>
+      <defs><clipPath id={clip}><path d={outline} /></clipPath></defs>
+      <path d={outline} fill="#ffffff08" />
+      <g clipPath={`url(#${clip})`}>
+        <rect className="cowFill" x="25" y={212 - 173 * share / 100} width="390" height={173 * share / 100} fill="currentColor" />
+      </g>
+      <path d={outline} fill="none" stroke="var(--cream)" strokeWidth="3" strokeLinejoin="round" />
+      <path d="M66 86 Q44 89 45 119 L42 149 M39 145 L46 145 L46 160 L39 160 Z M319 68 L307 58 M345 84 L348 84 M353 108 L377 106" fill="none" stroke="var(--cream)" strokeWidth="3" strokeLinecap="round" />
+    </svg>
+  );
+}
 function Explorer() {
   const params = useSearchParams();
   const initial =
     packages.find((p) => p.id === params.get("package"))?.id ?? "quarter";
   const [selected, setSelected] = useState<PackageId>(initial);
-  const [category, setCategory] = useState("Steaks");
-  const [cutId, setCutId] = useState<string>("ribeye");
   const pkg = packages.find((p) => p.id === selected)!;
-  const cut = cuts.find((c) => c.id === cutId)!;
   const panelId = useId();
   function selectPackage(id: PackageId) {
     setSelected(id);
@@ -40,28 +51,18 @@ function Explorer() {
               aria-controls={panelId}
               onClick={() => selectPackage(p.id)}
             >
-              {p.label}
+              {cowLabels[p.id]}
             </button>
           ))}
         </div>
         <div className="selectorBody" id={panelId}>
           <div className="shareVisual">
-            <p className="eyebrow">Your share of the beef</p>
+            <p className="eyebrow">Your share of the cow</p>
             <div className="shareNumber">
               {pkg.fraction}
               <small>{pkg.share}% SHARE</small>
             </div>
-            <div
-              className="shareDiagram"
-              role="img"
-              aria-label={`${pkg.share} percent share, shown in four equal portions`}
-            >
-              {[0, 1, 2, 3].map((i) => (
-                <span key={i} className={i < pkg.share / 25 ? "filled" : ""}>
-                  <Beef strokeWidth={1} aria-hidden="true" />
-                </span>
-              ))}
-            </div>
+            <CowShare share={pkg.share} />
             <p>
               Share illustration only.
               <br />
@@ -69,7 +70,7 @@ function Explorer() {
             </p>
           </div>
           <div className="packageDetails" aria-live="polite" aria-atomic="true">
-            <p className="eyebrow">{pkg.label} · Packaged beef</p>
+            <p className="eyebrow">{cowLabels[pkg.id]} · Packaged beef</p>
             <h2>{pkg.description}</h2>
             <p className="packageFit">{pkg.household}</p>
             <dl className="stats">
@@ -104,118 +105,38 @@ function Explorer() {
             </p>
             <div className="actions">
               <Link className="button" href={`/contact?interest=${pkg.id}`}>
-                Ask about {pkg.label.toLowerCase()}
+                Ask about {cowLabels[pkg.id].toLowerCase()}
               </Link>
-              <a href="#cuts" className="textLink">
-                Explore the cut guide
+              <a href="#assortment" className="textLink">
+                See your estimated cuts
               </a>
             </div>
           </div>
         </div>
       </section>
-      <section className="section wrap wholeAssortment" aria-labelledby="whole-assortment-title">
+      <section id="assortment" className="section wrap shareAssortment" aria-labelledby="assortment-title" aria-live="polite">
         <div className="sectionHeading">
           <div>
-            <p className="eyebrow">The ranch’s estimated assortment</p>
-            <h2 id="whole-assortment-title">Inside a whole beef.</h2>
+            <p className="eyebrow">Your estimated assortment</p>
+            <h2 id="assortment-title">Inside your {cowLabels[pkg.id].toLowerCase()}.</h2>
           </div>
-          <p>Approximately 400–500 lb of packaged beef. Use 460 lb as a planning estimate.</p>
+          <p>{pkg.share === 100 ? "The ranch’s full-cow estimates." : `Estimated at ${pkg.share}% of the ranch’s full-cow cut list.`} Actual weights and portions vary.</p>
         </div>
         <div className="assortmentGrid">
-          {wholeBeefAssortment.map((group) => (
+          {cowAssortment(selected).map((group) => (
             <article key={group.name}>
               <p className="eyebrow">{group.weight}</p>
               <h3>{group.name}</h3>
               <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
             </article>
           ))}
+          <article>
+            <p className="eyebrow">Allocation varies</p>
+            <h3>Extras</h3>
+            <ul>{["Soup bones", "Tallow", "Heart", "Liver", "Tongue", "Kidneys"].map((item) => <li key={item}>{item}</li>)}</ul>
+          </article>
         </div>
-        <p className="smallCopy">These are whole-beef estimates, not guaranteed counts. Category ranges vary together with the animal and cutting choices. Quarter and half assortments will be confirmed separately.</p>
-      </section>
-      <section id="cuts" className="section wrap cutGuide">
-        <div className="sectionHeading">
-          <div>
-            <p className="eyebrow">From freezer to favorite meals</p>
-            <h2>What’s in your beef?</h2>
-          </div>
-          <p>
-            A guide to familiar cuts and what to cook with them. Tap a cut to
-            explore.
-          </p>
-        </div>
-        <p className="notice">
-          Example cuts for your {pkg.label.toLowerCase()} — not a confirmed
-          packing list. Exact assortment and quantities are coming soon.
-        </p>
-        <figure className="cutAssortment">
-          <Image
-            src="/beef-cut-guide.webp"
-            width={2164}
-            height={727}
-            unoptimized
-            alt="Illustrative assortment of steaks, roast, ground beef, short ribs and brisket"
-          />
-          <figcaption>
-            Illustrative example cuts. Actual assortment and appearance will
-            vary.
-          </figcaption>
-        </figure>
-        <div className="cutCategories" role="group" aria-label="Cut category">
-          {categories.map((cat, i) => {
-            const Icon = categoryIcons[i];
-            return (
-              <button
-                type="button"
-                key={cat}
-                aria-pressed={cat === category}
-                onClick={() => {
-                  setCategory(cat);
-                  setCutId(cuts.find((c) => c.category === cat)!.id);
-                }}
-              >
-                <Icon size={24} strokeWidth={1.4} aria-hidden="true" />
-                {cat}
-              </button>
-            );
-          })}
-        </div>
-        <div className="cutsLayout">
-          <div className="cutCards">
-            {cuts
-              .filter((c) => c.category === category)
-              .map((c) => (
-                <button
-                  type="button"
-                  className="cutCard"
-                  key={c.id}
-                  aria-pressed={c.id === cutId}
-                  aria-controls="cut-detail"
-                  onClick={() => setCutId(c.id)}
-                >
-                  <span className="cutIcon">
-                    <Beef size={64} strokeWidth={1} aria-hidden="true" />
-                  </span>
-                  <strong>{c.name}</strong>
-                  <span>{c.method}</span>
-                </button>
-              ))}
-          </div>
-          <aside className="cutDetail" id="cut-detail" aria-live="polite">
-            <p className="eyebrow">At your table</p>
-            <h3>{cut.name}</h3>
-            <dl>
-              <dt>Best for</dt>
-              <dd>{cut.method}</dd>
-              <dt>Good for</dt>
-              <dd>{cut.meal}</dd>
-              <dt>Keep it simple</dt>
-              <dd>{cut.preparation}</dd>
-            </dl>
-            <p className="smallCopy">
-              Meal inspiration, not a confirmed package inclusion.
-            </p>
-          </aside>
-        </div>
+        <p className="smallCopy">Planning estimates, not guaranteed counts. Fractional cuts represent portion equivalents; the butcher will confirm the actual allocation, including specialty cuts and extras. Category ranges are approximate and may not add up to your estimated packaged weight.</p>
       </section>
       <Recommendation
         onChoose={(id) => {
@@ -289,14 +210,14 @@ function Recommendation({ onChoose }: { onChoose: (id: PackageId) => void }) {
         <div className="recommendationResult" aria-live="polite">
           <Snowflake size={32} strokeWidth={1} aria-hidden="true" />
           <p className="eyebrow">Start by exploring</p>
-          <h3>{pkg.label}</h3>
+          <h3>{cowLabels[pkg.id]}</h3>
           <p>{recommendation.reason}</p>
           <button
             type="button"
             className="button"
             onClick={() => onChoose(pkg.id)}
           >
-            Explore {pkg.label.toLowerCase()}
+            Explore {cowLabels[pkg.id].toLowerCase()}
           </button>
           <p className="smallCopy">
             A planning guide only. Package weights and freezer estimates are

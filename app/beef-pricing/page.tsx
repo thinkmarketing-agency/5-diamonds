@@ -11,7 +11,7 @@ export default function BeefPricing() {
   return (
     <main id="main">
       <Intro
-        eyebrow="Oregon beef · Quarter, half & whole"
+        eyebrow="Oregon beef · Quarter, half & full cow"
         title="Pay for the beef you take home."
       >
         <p>
@@ -38,8 +38,8 @@ export default function BeefPricing() {
             <span className="eyebrow">Our pricing basis</span>
             <h3>Packaged weight</h3>
             <p>
-              The finished cuts packed for your freezer. Quarter beef is $15/lb,
-              half beef is $13/lb and whole beef is $10/lb. Final weight,
+              The finished cuts packed for your freezer. Quarter cow is $15/lb,
+              half cow is $13/lb and full cow is $10/lb. Final weight,
               processing charges and any other fees will be confirmed before ordering.
             </p>
           </article>

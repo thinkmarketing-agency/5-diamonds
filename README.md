@@ -1,3 +1,34 @@
+# Five Diamonds Ranches — Vercel / Next.js
+
+The current expanded website uses standard Next.js commands:
+
+```sh
+npm ci
+npm run dev
+npm run build
+npm start
+npm test
+```
+
+Use Node.js 22.13 or later. `vercel.json` selects the Next.js framework,
+`npm ci`, `npm run build`, and `.next` output. Vercel should build the repository
+root. No DNS changes or Sites publishing are needed.
+
+The website is preserved from commit `0e88368`. GitHub main (`bf1e891`) has an
+older landing page; use the expanded site's history when reviewing or pushing
+this fix. Do not reset the website to GitHub main.
+
+Legacy Vinext / Cloudflare starter files and dependencies remain for reference;
+they are not used by the Next.js commands. TypeScript excludes only their build
+plugin, worker, generated declarations, unused D1 adapter and examples. All
+website pages, components, hooks and libraries still receive strict type checks.
+The rendered HTML test starts the real Next.js production server, checks every
+page and its local assets; UI CSS checks read `.next/static`.
+
+The starter documentation below describes the former Sites runtime.
+
+---
+
 # vinext-starter
 
 A clean full-stack starter running on [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and Drizzle support.

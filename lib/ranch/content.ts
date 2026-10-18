@@ -4,7 +4,7 @@ export const brand = {
   tagline: "BEEF • HAY • FAMILY",
   region: "Oregon",
   image: "/central-oregon-ranch.png",
-  email: null as string | null,
+  email: "5diamondranches@gmail.com",
   phone: null as string | null,
 };
 export const navigation = [

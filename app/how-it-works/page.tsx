@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Intro, PricingNote, FAQ } from "@/components/ranch/shared";
+import { Intro, PricingNote, FAQ, Callout } from "@/components/ranch/shared";
 import { steps } from "@/lib/ranch/content";
 export const metadata: Metadata = {
   title: "How It Works",
@@ -37,6 +37,7 @@ export default function HowPage() {
         <PricingNote />
       </div>
       <FAQ />
+      <Callout />
     </main>
   );
 }

@@ -138,9 +138,9 @@ export function Callout() {
         <br />
         To your table.
       </h2>
-      <p>Find your fit. Get to know your beef.</p>
-      <Link href="/beef-pricing" className="button">
-        Explore beef & pricing
+      <p>Have a question about beef or hay? Talk with the ranch.</p>
+      <Link href="/contact" className="button">
+        Ask about availability
       </Link>
     </section>
   );

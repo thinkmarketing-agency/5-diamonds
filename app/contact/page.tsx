@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Intro } from "@/components/ranch/shared";
 import { ContactForm } from "@/components/ranch/contact-form";
+import { contactReady } from "@/lib/ranch/contact";
 import { brand } from "@/lib/ranch/content";
 export const metadata: Metadata = {
   title: "Contact & Order",
   description:
-    "Plan your quarter, half or whole Oregon beef inquiry with 5 Diamonds Ranches. Contact and reservation details are coming soon.",
+    "Plan your quarter, half or whole Oregon beef inquiry with 5 Diamonds Ranches. Ask about availability and get a reply from the ranch.",
   alternates: { canonical: "/contact" },
 };
 export default function ContactPage() {
@@ -16,13 +17,12 @@ export default function ContactPage() {
         title="Your next great meal starts here."
       >
         <p>
-          Quarter, half or whole beef. Hay inquiries, too. We’re getting the
-          details ready to help you plan.
+          Quarter, half or whole beef. Hay inquiries, too. Send us your questions and we’ll help you plan.
         </p>
       </Intro>
       <section className="wrap section contactGrid">
         <div>
-          <ContactForm />
+          <ContactForm enabled={contactReady()} />
         </div>
         <aside className="contactAside">
           <p className="eyebrow">5 Diamonds Ranches</p>

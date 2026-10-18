@@ -60,7 +60,7 @@ export function Header() {
           className="button compact"
           onClick={() => setOpen(false)}
         >
-          Order beef
+          Ask about availability
         </Link>
       </nav>
     </header>
@@ -82,6 +82,7 @@ export function Footer() {
             {n.label}
           </Link>
         ))}
+        <Link href="/contact?interest=hay">Ask about hay</Link>
       </nav>
       <p className="footerBottom">
         © {new Date().getFullYear()} {brand.name}

@@ -1432,3 +1432,11 @@ select {
 @media (max-width: 640px) {
   .heroTaglinePhrase { display: block; white-space: nowrap; }
 }
+
+.inquiryFields { display: grid; gap: 24px; min-width: 0; }
+.formTrap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.button:disabled { opacity: .6; cursor: not-allowed; }
+.contactResult { margin-top: 24px; overflow-wrap: anywhere; }
+.radioChoices label { min-height: 44px; }
+.inquiryForm input, .inquiryForm select, .inquiryForm textarea { font-size: 16px; }
+.contactGrid > div { min-width: 0; }

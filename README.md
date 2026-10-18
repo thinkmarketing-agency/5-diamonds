@@ -1,3 +1,26 @@
+## Ranch inquiry activation
+
+Owner-confirmed recipient: 5diamondranches@gmail.com. POST /api/contact validates
+fields, rejects a hidden honeypot, and sends through Resend with the visitor as
+Reply-To. Same-origin checks, bounded request sizes, timeouts and idempotent
+retries remain. Turnstile has been removed at the owner's request; there is no
+CAPTCHA or Cloudflare account requirement. The honeypot is basic protection and
+does not stop all automated abuse.
+
+Set RESEND_API_KEY and CONTACT_FROM_EMAIL in Vercel, using a verified sender
+domain. See .env.example. Rebuild after configuration because form availability
+is resolved at build time. Without credentials, submission is disabled and the
+direct email fallback remains visible. Do not use the recipient Gmail as sender.
+Use an existing or free Resend account; obtain approval before any paid upgrade.
+
+Before launch, test a real inquiry with authorization to email the owner, verify
+Gmail Inbox/Spam receipt and Reply-To, and check provider delivery logs. Test
+mobile inputs, retained entries on failure, duplicate retries and quota errors.
+API acceptance alone does not prove inbox delivery. There is no lead database
+or durable background retry queue. Consider hosting rate limits or stronger spam
+protection if abuse appears. No account, DNS change, deployment or real email
+has been created by this implementation.
+
 # Five Diamonds Ranches — Vercel / Next.js
 
 The current expanded website uses standard Next.js commands:
